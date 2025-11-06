@@ -4,7 +4,13 @@
   "version": "0.0.1",
   "author": "Drew Daniels",
   "bugs": "https://gitlab.webpt.com/ddaniels/medplum-full-stack/issues",
-  "dependencies": {},
+  "dependencies": {
+    "@dotenvx/dotenvx": "^1.51.1",
+    "@medplum/core": "^4.5.2",
+    "@medplum/fhirtypes": "^4.5.2",
+    "envalid": "^8.1.1",
+    "json-colorizer": "^3.0.1"
+  },
   "devDependencies": {
     "@cspell/eslint-plugin": "^9.2.0",
     "@eslint/js": "^9.33.0",
@@ -14,9 +20,9 @@
     "eslint-config-prettier": "^10.1.8",
     "jiti": "^2.5.1",
     "prettier": "3.6.2",
+    "shx": "^0.4.0",
     "typescript": "^5",
-    "typescript-eslint": "^8.39.1",
-    "shx": "^0.4.0"
+    "typescript-eslint": "^8.39.1"
   },
   "engines": {
     "node": ">=18.0.0"
@@ -42,8 +48,17 @@
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
     "format": "prettier 'src/**/*.ts'",
-    "format:write": "prettier 'src/**/*.ts' --write"
+    "format:write": "prettier 'src/**/*.ts' --write",
+    "search:basic:patients:by-id": "node dist/search/basic/patients/by-id.js",
+    "search:basic:patients:by-birthdate": "node dist/search/basic/patients/by-birthdate.js",
+    "search:basic:patients:by-name-and-birthdate": "node dist/search/basic/patients/by-name-and-birthdate.js",
+    "search:basic:observations:all": "node dist/search/basic/observations/all.js",
+    "search:basic:observations:by-patient-reference": "node dist/search/basic/observations/by-patient-reference.js",
+    "search:basic:diagnostic-reports:by-status-final": "node dist/search/basic/diagnostic-reports/by-status-final.js",
+    "search:basic:diagnostic-reports:by-status-not-final": "node dist/search/basic/diagnostic-reports/by-status-not-final.js",
+    "search:_filter:patients:by-name-and-gender": "node dist/search/_filter/patients/by-name-and-gender.js",
+    "search:linked:observations:include-patient": "node dist/search/linked/observations/include-patient.js",
+    "search:chained:observations:by-patient-name": "node dist/search/chained/observations/by-patient-name.js"
   },
-  "types": "dist/index.d.ts"
+  "types": "dist/search/basic/index.d.ts"
 }
-

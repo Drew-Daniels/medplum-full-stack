@@ -2,6 +2,6 @@
 import { defineConfig } from 'cspell';
 export default defineConfig({
     /* eslint-disable */
-    words: ['direnv', 'envrc'],
+    words: ['direnv', 'envrc', 'medplum', 'fhir', 'revinclude'],
     /* eslint-enable */
 });
